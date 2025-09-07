@@ -10,7 +10,7 @@ const breadcrumbs: IBreadcrumItem[] = [
 const UsersPage = () => {
   return (
     <div>
-      <AppBreadcrumb dirs={breadcrumbs} currentPage="회원 관리" />
+      <AppBreadcrumb dirs={breadcrumbs} current="회원 관리" />
     </div>
   );
 };

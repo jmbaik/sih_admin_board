@@ -1,4 +1,4 @@
-import { Fragment, ReactElement } from "react";
+import { Fragment } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,22 +8,21 @@ import {
   BreadcrumbSeparator,
 } from "./ui/breadcrumb";
 
-export default function AppBreadcrumb({
-  dirs,
-  currentPage,
-}: {
+interface AppBreadcrumbProps extends React.ComponentProps<"div"> {
   dirs: IBreadcrumItem[];
-  currentPage: string;
-}): ReactElement {
+  current: string;
+}
+
+export default function AppBreadcrumb(props: AppBreadcrumbProps) {
   return (
-    <div>
+    <div {...props}>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
-          {dirs.map((dir) => (
+          {props.dirs.map((dir) => (
             <Fragment key={dir.title}>
               <BreadcrumbItem>
                 <BreadcrumbLink href={dir.href}>{dir.title}</BreadcrumbLink>
@@ -32,7 +31,7 @@ export default function AppBreadcrumb({
             </Fragment>
           ))}
           <BreadcrumbItem>
-            <BreadcrumbPage>{currentPage}</BreadcrumbPage>
+            <BreadcrumbPage>{props.current}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
