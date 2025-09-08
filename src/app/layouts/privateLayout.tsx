@@ -5,9 +5,7 @@ import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
-import { redirect } from "next/navigation";
 import { ReactNode } from "react";
-import useAdminUserStore from "../store/admin.user.store";
 
 const PrivateLayout = ({
   children,
@@ -16,11 +14,11 @@ const PrivateLayout = ({
   children: ReactNode;
   sidebarState: string | null;
 }) => {
-  const { adminUser } = useAdminUserStore();
+  // const { adminUser } = useAdminUserStore();
 
-  if (!adminUser) {
-    redirect("/login");
-  }
+  // if (!adminUser) {
+  //   redirect("/login");
+  // }
 
   const defaultOpen =
     sidebarState === "true" || sidebarState === null ? true : false;

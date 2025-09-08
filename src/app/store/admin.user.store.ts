@@ -17,7 +17,8 @@ const useAdminUserStore = create<AdminUserState>()(
     }),
     {
       name: "sihAdminBoardStore",
-      storage: createJSONStorage(() => localStorage),
+      // storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );
