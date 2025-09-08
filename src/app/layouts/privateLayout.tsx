@@ -14,8 +14,8 @@ const PrivateLayout = ({
   children: ReactNode;
   sidebarState: string | null;
 }) => {
+  /* adminUser 상태가 없으면 login 으로 리다이렉트 사용하면 항상 리프레시 그러므로 주석 처리 */
   // const { adminUser } = useAdminUserStore();
-
   // if (!adminUser) {
   //   redirect("/login");
   // }

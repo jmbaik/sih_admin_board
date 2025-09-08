@@ -44,12 +44,14 @@ import { SihDataTablePagination } from "./SihDataTablePagination";
 interface SihDataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  initialFilterCol?: string;
   delFunc?: () => void;
 }
 
 export default function SihDataTable<TData, TValue>({
   columns,
   data,
+  initialFilterCol = "id",
   delFunc,
 }: SihDataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -59,7 +61,7 @@ export default function SihDataTable<TData, TValue>({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  const [filterColumn, setFilterColumn] = React.useState("email");
+  const [filterColumn, setFilterColumn] = React.useState(initialFilterCol);
 
   const table = useReactTable({
     data,

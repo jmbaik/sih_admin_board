@@ -1,6 +1,6 @@
-export interface IResponse {
-  success: "fail" | "success";
+export interface IResponse<T> {
+  success: boolean;
   message: string;
-  data?: any;
+  data?: T[];
   count?: number | null;
 }

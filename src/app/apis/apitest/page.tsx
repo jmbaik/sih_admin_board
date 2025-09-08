@@ -1,5 +1,5 @@
 "use client";
-import { fetchChannel } from "@/actions/youtube.video";
+import { supaFetchYoutubeChannel } from "@/actions/youtube.video";
 import AppBreadcrumb from "@/components/AppBreadcrumb";
 import { Button } from "@/components/ui/button";
 import {
@@ -62,7 +62,7 @@ const ApisPage = () => {
                     size={"sm"}
                     className="m-0"
                     onClick={async () => {
-                      const result: IResponse = await fetchChannel();
+                      const result: IResponse = await supaFetchYoutubeChannel();
                       let tmp = "";
                       result.data.map((item: { title: string }) => {
                         tmp += `${item.title}\n`;
