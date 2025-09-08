@@ -203,28 +203,28 @@ const CompIndexPage = () => {
   return (
     <div>
       <AppBreadcrumb dirs={dirs} current={"컴포넌트 테스트"} />
-      {loading && <SihSpinner height={150} />}
-      {!loading && channelData.length > 0 && (
-        <Card className="mt-5">
-          <CardHeader>
-            <CardTitle>SIH Data Table Test</CardTitle>
-            <CardDescription>Component Test section part</CardDescription>
-            <CardAction>Action sector</CardAction>
-          </CardHeader>
-          <CardContent>
+      <Card className="mt-5">
+        <CardHeader>
+          <CardTitle>SIH Data Table Test</CardTitle>
+          <CardDescription>Component Test section part</CardDescription>
+          <CardAction>Action sector</CardAction>
+        </CardHeader>
+        <CardContent>
+          {loading && <SihSpinner height={150} />}
+          {!loading && channelData.length > 0 && (
             <SihDataTable
               data={channelData}
               columns={youtubeChannelColumns}
               initialFilterCol="title"
             />
-          </CardContent>
-          <CardFooter>
-            <div className="w=[300px]">
-              <p className="overflow-wrap-break-word"></p>
-            </div>
-          </CardFooter>
-        </Card>
-      )}
+          )}
+        </CardContent>
+        <CardFooter>
+          <div className="w=[300px]">
+            <p className="overflow-wrap-break-word"></p>
+          </div>
+        </CardFooter>
+      </Card>
     </div>
   );
 };
