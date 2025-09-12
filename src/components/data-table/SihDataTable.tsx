@@ -46,6 +46,8 @@ interface SihDataTableProps<TData, TValue> {
   data: TData[];
   initialFilterCol?: string;
   delFunc?: () => void;
+  addFunc?: () => void;
+  updFunc?: () => void;
 }
 
 export default function SihDataTable<TData, TValue>({
@@ -53,6 +55,8 @@ export default function SihDataTable<TData, TValue>({
   data,
   initialFilterCol = "id",
   delFunc,
+  addFunc,
+  updFunc,
 }: SihDataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -146,14 +150,15 @@ export default function SihDataTable<TData, TValue>({
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <Button
-          variant={"destructive"}
-          size={"sm"}
-          className="ml-auto"
-          onClick={delFunc}
-        >
-          삭제
-        </Button>
+        {/* toolbar action part  */}
+        <div className="ml-auto not-first:flex justify-end items-center gap-4">
+          <Button variant={"default"} size={"sm"} onClick={addFunc}>
+            추가
+          </Button>
+          <Button variant={"destructive"} size={"sm"} onClick={delFunc}>
+            삭제
+          </Button>
+        </div>
       </div>
       <div className="overflow-hidden rounded-md border">
         <Table>
@@ -184,7 +189,7 @@ export default function SihDataTable<TData, TValue>({
                     data-state={row.getIsSelected() && "selected"}
                   >
                     {row.getVisibleCells().map((cell) => {
-                      console.log("row_cell_def ::: ", cell.column.columnDef);
+                      // console.log("row_cell_def ::: ", cell.column.columnDef);
 
                       return (
                         <TableCell key={cell.id}>

@@ -1,5 +1,5 @@
 "use client";
-import { supaFetchYoutubeChannel } from "@/actions/youtube.video";
+import { IYoutubeChannel, supaFetchYoutubeChannel } from "@/actions/supabase.video";
 import AppBreadcrumb from "@/components/AppBreadcrumb";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,15 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useState } from "react";
 import { IResponse } from "../../store/dto.response";
 
@@ -62,9 +54,9 @@ const ApisPage = () => {
                     size={"sm"}
                     className="m-0"
                     onClick={async () => {
-                      const result: IResponse = await supaFetchYoutubeChannel();
+                      const result: IResponse<IYoutubeChannel> = await supaFetchYoutubeChannel();
                       let tmp = "";
-                      result.data.map((item: { title: string }) => {
+                      result.data?.map((item: { title: string }) => {
                         tmp += `${item.title}\n`;
                       });
                       tmp += " count:" + result.count;

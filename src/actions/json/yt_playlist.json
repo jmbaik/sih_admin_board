@@ -1,0 +1,440 @@
+{
+  "kind": "youtube#playlistListResponse",
+  "etag": "0nocJAHURqLP1OjG6RY5Z-TMFuA",
+  "pageInfo": {
+    "totalResults": 10,
+    "resultsPerPage": 50
+  },
+  "items": [
+    {
+      "kind": "youtube#playlist",
+      "etag": "OKiiA1p0jtcpYrgDmZYkgpIt8Yc",
+      "id": "PLwYfRyUAnqHDVL-etEEPVa1xvW_V5sepl",
+      "snippet": {
+        "publishedAt": "2024-06-04T05:25:03.454819Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "재즈트리오",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "재즈트리오",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 0
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "9Sm4UwzqElFJeY7hmdR6ou8Emw0",
+      "id": "PLwYfRyUAnqHCeDHCUvSDv17cGf2RZZKfS",
+      "snippet": {
+        "publishedAt": "2024-06-04T05:24:54.313322Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "성탄",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UTWsXQTagAE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UTWsXQTagAE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UTWsXQTagAE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/UTWsXQTagAE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/UTWsXQTagAE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "성탄",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 8
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "EgIkD5ouuqs3zu0FDKRHufw79yM",
+      "id": "PLwYfRyUAnqHATRsYANYrPhHkx_odspDkw",
+      "snippet": {
+        "publishedAt": "2024-06-04T05:24:44.016958Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "부활절",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8VX3sZVo0iw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8VX3sZVo0iw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8VX3sZVo0iw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/8VX3sZVo0iw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/8VX3sZVo0iw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "부활절",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 1
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "TWK6L4pqGcjbxeWv8Q79la35pMc",
+      "id": "PLwYfRyUAnqHDsfn4Y9-4pFqGi757PM3SR",
+      "snippet": {
+        "publishedAt": "2024-06-04T05:24:32.575046Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "사랑과 축복",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "사랑과 축복",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 57
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "b5nFfIaJNtv8Wo8PcpUHx6ZbOcE",
+      "id": "PLwYfRyUAnqHAK-M2cg3oJZtkWGSOfx7Zf",
+      "snippet": {
+        "publishedAt": "2024-06-04T05:24:05.529703Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "묵상과 기도",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GjJB9mdpT3k/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GjJB9mdpT3k/mqdefault_live.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GjJB9mdpT3k/hqdefault_live.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/GjJB9mdpT3k/sddefault_live.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/GjJB9mdpT3k/maxresdefault_live.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "묵상과 기도",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 74
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "D5-17xL3mfCPR27cd9t7-l8PUas",
+      "id": "PLwYfRyUAnqHD0Bw0KFoHZaCRoTtf2Sp3E",
+      "snippet": {
+        "publishedAt": "2024-06-04T05:23:47.432636Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "경배와 찬양",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6di_Z-5Fc4s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6di_Z-5Fc4s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6di_Z-5Fc4s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/6di_Z-5Fc4s/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/6di_Z-5Fc4s/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "경배와 찬양",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 71
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "wje-dkjjy2QMtfnm04-e2F3kZ8w",
+      "id": "PLwYfRyUAnqHC4kFTWdVh6jzwddfLaw8wB",
+      "snippet": {
+        "publishedAt": "2024-06-04T05:23:12.53002Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "은혜와 감사",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/lh-AZZX6h78/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "은혜와 감사",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 75
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "HWvlasAYHr4TIxzFxUZ_x0-QYsE",
+      "id": "PLwYfRyUAnqHDBP2ImLDNLxBC2aOaySa9I",
+      "snippet": {
+        "publishedAt": "2023-03-29T02:32:53.56477Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "christian jazz piano playlist",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ufexjxUwRBA/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ufexjxUwRBA/mqdefault_live.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ufexjxUwRBA/hqdefault_live.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ufexjxUwRBA/sddefault_live.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ufexjxUwRBA/maxresdefault_live.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "christian jazz piano playlist",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 34
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "kbPwip2tUTuB6aig7T9JupxKcXk",
+      "id": "PLwYfRyUAnqHD9Hr3q7_uWRuD5RoQRSmLk",
+      "snippet": {
+        "publishedAt": "2023-02-10T04:19:28.909018Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "christian jazz",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "christian jazz",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 0
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "vVZJ-sIpL2fd066OMAyDVCxW13c",
+      "id": "PLwYfRyUAnqHCGJQr4rNR7CFhbHg8aBX7V",
+      "snippet": {
+        "publishedAt": "2023-02-10T04:18:56.858194Z",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "christian jazz playlist",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "힘들때Hymn들어 | Listen Hymn",
+        "localized": {
+          "title": "christian jazz playlist",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 0
+      }
+    }
+  ]
+}

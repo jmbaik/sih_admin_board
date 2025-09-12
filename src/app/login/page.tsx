@@ -9,7 +9,7 @@ import { login } from "./actions";
 
 export default function LoginPage() {
   const { adminUser, setAdminUser } = useAdminUserStore();
-  console.log("login adminuser state ::: ", adminUser);
+  // console.log("login adminuser state ::: ", adminUser);
   useEffect(() => {
     if (adminUser) redirect("/");
   }, [adminUser]);

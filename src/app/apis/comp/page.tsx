@@ -2,7 +2,7 @@
 import {
   IYoutubeChannel,
   supaFetchYoutubeChannel,
-} from "@/actions/youtube.video";
+} from "@/actions/supabase.video";
 import AppBreadcrumb from "@/components/AppBreadcrumb";
 import SihDataTable from "@/components/data-table/SihDataTable";
 import SihSpinner from "@/components/data-table/SihSpinner";
@@ -25,12 +25,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Sheet } from "@/components/ui/sheet";
 
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { toast } from "sonner";
+import AddChannel from "./features/AddChannel";
+import { DeleteChannel } from "./features/DeleteChannel";
+import UpdateChannel from "./features/UpdateChannel";
 
 const dirs: IBreadcrumItem[] = [
   {
@@ -163,12 +167,27 @@ const CompIndexPage = () => {
   const [loading, setLoading] = React.useState(false);
   const [channelData, setChannelData] = React.useState<IYoutubeChannel[]>([]);
   const pathName = usePathname();
+  const [sheetOpen, setSheetOpen] = React.useState(false);
+  const [actionType, setActionType] = React.useState<"C" | "U" | "D">("C");
+
+  const addChannel = () => {
+    console.log("addChannel");
+    setSheetOpen(true);
+  };
+  const updateChannel = () => {
+    console.log("updatechannel");
+    setSheetOpen(true);
+  };
+  const deleteChannel = () => {
+    console.log("deleteChannel");
+    setSheetOpen(true);
+  };
 
   const fetchChannelData = async () => {
     try {
       setLoading(true);
       const response: any = await supaFetchYoutubeChannel();
-      console.log("supaFetchYoutubeChannel data : ", response.data);
+      // console.log("supaFetchYoutubeChannel data : ", response.data);
 
       if (response.success) {
         toast.success(response.message);
@@ -216,6 +235,7 @@ const CompIndexPage = () => {
               data={channelData}
               columns={youtubeChannelColumns}
               initialFilterCol="title"
+              addFunc={addChannel}
             />
           )}
         </CardContent>
@@ -225,6 +245,11 @@ const CompIndexPage = () => {
           </div>
         </CardFooter>
       </Card>
+      <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+        {actionType === "C" && <AddChannel />}
+        {actionType === "U" && <UpdateChannel />}
+        {actionType === "D" && <DeleteChannel />}
+      </Sheet>
     </div>
   );
 };

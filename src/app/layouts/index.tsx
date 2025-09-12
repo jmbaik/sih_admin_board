@@ -14,7 +14,7 @@ const AdminAppLayout = ({
   const pathName = usePathname();
   /* 로그인 영역 -> public
     이외 -> private 영역 */
-  console.log("pathname ::: ", pathName);
+  // console.log("pathname ::: ", pathName);
 
   const isPublic =
     pathName.startsWith("/login") ||

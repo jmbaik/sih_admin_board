@@ -17,8 +17,9 @@ const useAdminUserStore = create<AdminUserState>()(
     }),
     {
       name: "sihAdminBoardStore",
-      // storage: createJSONStorage(() => localStorage),
-      storage: createJSONStorage(() => sessionStorage),
+      // TODO:나중에 sessionStorage로 수정해야 함
+      storage: createJSONStorage(() => localStorage),
+      // storage: createJSONStorage(() => sessionStorage),
     }
   )
 );

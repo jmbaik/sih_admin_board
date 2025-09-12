@@ -21,7 +21,7 @@ export interface IAdminUser {
 
 export const logonUserInfo = async (
   email: string
-): Promise<IResponse | undefined> => {
+): Promise<IResponse<IAdminUser> | undefined> => {
   try {
     const { data, error } = await supabase
       .from("tb_admins")
@@ -31,14 +31,14 @@ export const logonUserInfo = async (
 
     if (error) {
       return {
-        success: "fail",
+        success: false,
         message: error.message,
         data: null,
       };
     }
 
     return {
-      success: "success",
+      success: true,
       message: "",
       data: data,
     };

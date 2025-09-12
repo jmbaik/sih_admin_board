@@ -25,7 +25,7 @@ export async function login(
   }
 
   const { data: userData, error: userError } = await supabase.auth.getUser();
-  console.log("user data", userData);
+  // console.log("user data", userData);
 
   const userInfo = await logonUserInfo(userData.user?.email ?? "");
 

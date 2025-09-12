@@ -1,0 +1,85 @@
+{
+  "kind": "youtube#channelSectionListResponse",
+  "etag": "5lgY9LM7xMQyp4jpVikWMzBpMDk",
+  "items": [
+    {
+      "kind": "youtube#channelSection",
+      "etag": "4nkQInwxDR2u7RS6sFWFotnzTSE",
+      "id": "UCb8eXF4XpCpTmudMvFKFSxg.Zx4DA4xg9IM",
+      "snippet": {
+        "type": "channelsectiontypeundefined",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "position": 0
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "ZfZE5L5Q-XL1e2v-FHN0u3NfKIY",
+      "id": "UCb8eXF4XpCpTmudMvFKFSxg.jNQXAC9IVRw",
+      "snippet": {
+        "type": "channelsectiontypeundefined",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "position": 1
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "KLLvSA87YIPW29bTuoJE4Y99oBU",
+      "id": "UCb8eXF4XpCpTmudMvFKFSxg.LeAltgu_pbM",
+      "snippet": {
+        "type": "multiplechannels",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "title": "힘들때Hymn들어 추천채널!",
+        "position": 2
+      },
+      "contentDetails": {
+        "channels": [
+          "UCbsHYIZwk9pZIMp53ciDjOw",
+          "UCWkXgpT_QeGZbNucSBToNyw",
+          "UC9AXK-bRdQYpufil0IOJapQ",
+          "UC1dA3Rw5aTs9gh2N-Eeo-lQ"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "g4y5GNN0pa_gd1dRfuKGe_b1kJk",
+      "id": "UCb8eXF4XpCpTmudMvFKFSxg.nGzAI5pLbMY",
+      "snippet": {
+        "type": "popularuploads",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "position": 3
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "EitM_GYZBXwkjk9HLiKV-IfMYGg",
+      "id": "UCb8eXF4XpCpTmudMvFKFSxg.__WLXNpu6u8",
+      "snippet": {
+        "type": "recentuploads",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "position": 4
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "Ka-c5c2KVopP26kiiKBiebGIgoY",
+      "id": "UCb8eXF4XpCpTmudMvFKFSxg.MykmTeTiooA",
+      "snippet": {
+        "type": "channelsectiontypeundefined",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "position": 5
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "_2PtzHh9IBoEnYA-hcRCnpSsitA",
+      "id": "UCb8eXF4XpCpTmudMvFKFSxg.iJLXf_7B368",
+      "snippet": {
+        "type": "channelsectiontypeundefined",
+        "channelId": "UCb8eXF4XpCpTmudMvFKFSxg",
+        "position": 6
+      }
+    }
+  ]
+}
