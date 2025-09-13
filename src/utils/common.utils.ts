@@ -12,7 +12,8 @@ export function tryParseInt(value: string | undefined, radix: number = 10, defau
   }
 }
 
-export function parseYouTubeDuration(duration: string): number {
+export function secondsFromYoutubeDuration(duration: string): number {
+  if (duration === "") return -1;
   let seconds = 0;
   const part = duration.match(/P(?:(\d+)D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
   if (part) {
@@ -28,7 +29,7 @@ export function parseYouTubeDuration(duration: string): number {
 // const totalSeconds = parseYouTubeDuration(durationString); // 결과: 933 (15 * 60 + 33)
 // console.log(totalSeconds);
 
-export function secondToTime(totalSeconds: number): string {
+export function semiTimeFromSeconds(totalSeconds: number): string {
   const hours = Math.floor(totalSeconds / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
@@ -45,7 +46,7 @@ export function secondToTime(totalSeconds: number): string {
 // console.log(secondToTime(7200)); // 출력: "02:00:00"
 
 export function arraySplit50(arr: string[]): string[][] {
-  let result: Array<string[]> = [];
+  const result: Array<string[]> = [];
   const total = arr.length;
   if (arr.length <= 50) {
     return [arr];

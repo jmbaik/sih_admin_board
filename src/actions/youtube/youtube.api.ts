@@ -1,3 +1,5 @@
+"use server";
+
 import { youtube, youtube_v3 } from "@googleapis/youtube";
 
 /***
@@ -38,15 +40,12 @@ async function getYoutubePlayList(channelId: string, pageToken: string) {
 export async function fetchAllPlaylist(channelId: string) {
   let result: youtube_v3.Schema$Playlist[] = [];
   let _nextPageToken = "";
-  let _length = 0;
   const initResponse = await getYoutubePlayList(channelId, _nextPageToken);
-  _length = initResponse.items?.length ?? 0;
   _nextPageToken = initResponse.nextPageToken ?? "";
   result = initResponse.items ?? [];
 
-  while (_nextPageToken !== "" || _length === 0) {
+  while (_nextPageToken !== "") {
     const response = await getYoutubePlayList(channelId, _nextPageToken);
-    _length = response.items?.length ?? 0;
     _nextPageToken = response.nextPageToken ?? "";
     result = [...result, ...(response.items ?? [])];
   }
@@ -83,16 +82,13 @@ async function getYoutubePlayListItem(playlistId: string, pageToken: string) {
 export async function fetchAllPlaylistItem(playlistId: string) {
   let result: youtube_v3.Schema$PlaylistItem[] = [];
   let _nextPageToken = "";
-  let _length = 0;
   const initResponse = await getYoutubePlayListItem(playlistId, _nextPageToken);
 
-  _length = initResponse.items?.length ?? 0;
   _nextPageToken = initResponse.nextPageToken ?? "";
   result = initResponse.items ?? [];
 
-  while (_nextPageToken !== "" || _length === 0) {
+  while (_nextPageToken !== "") {
     const response = await getYoutubePlayListItem(playlistId, _nextPageToken);
-    _length = response.items?.length ?? 0;
     _nextPageToken = response.nextPageToken ?? "";
     result = [...result, ...(response.items ?? [])];
   }
@@ -123,27 +119,15 @@ async function getYoutubeVideos(videos: string[], pageToken: string) {
 export async function fetchAllVideos(videos: string[]) {
   let result: youtube_v3.Schema$Video[] = [];
   let _nextPageToken = "";
-  let _length = 0;
   const initResponse = await getYoutubeVideos(videos, _nextPageToken);
 
-  _length = initResponse.items?.length ?? 0;
   _nextPageToken = initResponse.nextPageToken ?? "";
   result = initResponse.items ?? [];
 
-  while (_nextPageToken !== "" || _length === 0) {
+  while (_nextPageToken !== "") {
     const response = await getYoutubeVideos(videos, _nextPageToken);
-    _length = response.items?.length ?? 0;
     _nextPageToken = response.nextPageToken ?? "";
     result = [...result, ...(response.items ?? [])];
   }
   return result;
-}
-
-export async function fetchYoutubeVideo(video: string) {
-  const response = await yt.videos.list({
-    part: ["snippet", "contentDetails", "statistics"],
-    id: ["LUBp05v52ao"],
-  });
-  const schema: youtube_v3.Schema$VideoListResponse = response.data;
-  return schema;
 }

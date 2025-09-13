@@ -1,61 +1,62 @@
-import { secondToTime, tryParseInt } from "@/utils/common.utils";
+import { secondsFromYoutubeDuration, semiTimeFromSeconds, tryParseInt } from "@/utils/common.utils";
 import { youtube_v3 } from "@googleapis/youtube";
 import { IAdminUser } from "../admin.user";
 
-interface ITbYtPlaylist {
-  playlistId: string;
-  channelId: string;
-  publishDate: string;
+export interface ITbYtPlaylist {
+  playlist_id: string;
+  channel_id: string;
+  publish_date: string;
   title: string;
   description: string | null;
-  thumbLow: string | null;
-  thumbMid: string | null;
-  thumbHigh: string | null;
+  thumb_low: string | null;
+  thumb_mid: string | null;
+  thumb_high: string | null;
   regid: string;
   updid: string;
   upddt: string;
+  items_count: number | null;
 }
 
-interface ITbYtPlaylistItem {
+export interface ITbYtPlaylistItem {
   vid: string;
-  playlistId: string;
-  channelId: string;
-  publishDate: string;
-  videoPublishDate: string;
+  playlist_id: string;
+  channel_id: string;
+  publish_date?: string;
+  video_publish_date: string;
   title: string;
   description: string | null;
-  thumbLow: string | null;
-  thumbMid: string | null;
-  thumbHigh: string | null;
+  thumb_low: string | null;
+  thumb_mid: string | null;
+  thumb_high: string | null;
   regid: string;
   updid: string;
   upddt: string;
 }
 
-interface ITbYtVideo {
+export interface ITbYtVideo {
   vid: string;
   cat?: string;
-  channelId: string;
-  playlistId?: string | null;
+  channel_id: string;
+  playlist_id?: string | null;
   title: string;
   author?: string | null;
   duration: string | null;
   description: string | null;
-  publishDate: string | null;
-  avgRate?: string | null;
-  viewCount: number | null;
-  likeCount: number | null;
-  favoriteCount: number | null;
-  commentCount: number | null;
-  runtimeType?: string | null;
+  publish_date?: string | null;
+  avg_rate?: string | null;
+  view_count: number | null;
+  like_count: number | null;
+  favorite_count: number | null;
+  comment_count: number | null;
+  runtime_type?: string | null;
   keywords?: string | null;
-  thumbLow: string | null;
-  thumbMid: string | null;
-  thumbHigh: string | null;
-  uploadDate: string | null;
-  publishedAt: string | null;
+  thumb_low: string | null;
+  thumb_mid: string | null;
+  thumb_high: string | null;
+  upload_date?: string | null;
+  published_at?: string | null;
   seconds: number | null;
-  defaultLanguage: string | null;
+  default_language: string | null;
   regid: string;
   updid: string;
   upddt: string;
@@ -64,17 +65,18 @@ interface ITbYtVideo {
 export function convToSupaPlaylist(playlists: youtube_v3.Schema$Playlist[], user: IAdminUser): ITbYtPlaylist[] {
   const result = playlists.map((playlist) => {
     return {
-      playlistId: playlist.id ?? "",
-      channelId: playlist.snippet?.channelId ?? "",
-      publishDate: playlist.snippet?.publishedAt?.toString() ?? "",
+      playlist_id: playlist.id ?? "",
+      channel_id: playlist.snippet?.channelId ?? "",
+      publish_date: playlist.snippet?.publishedAt?.toString() ?? "",
       title: playlist.snippet?.title ?? "",
       description: playlist.snippet?.description ?? "",
-      thumbLow: playlist.snippet?.thumbnails?.default?.url ?? "",
-      thumbMid: playlist.snippet?.thumbnails?.medium?.url ?? "",
-      thumbHigh: playlist.snippet?.thumbnails?.high?.url ?? "",
+      thumb_low: playlist.snippet?.thumbnails?.default?.url ?? "",
+      thumb_mid: playlist.snippet?.thumbnails?.medium?.url ?? "",
+      thumb_high: playlist.snippet?.thumbnails?.high?.url ?? "",
       regid: user.uid,
       updid: user.uid,
       upddt: new Date().toISOString(),
+      items_count: playlist.contentDetails?.itemCount ?? 0,
     };
   });
   return result;
@@ -84,50 +86,63 @@ export function convToSupaPlaylistItem(
   playlists: youtube_v3.Schema$PlaylistItem[],
   user: IAdminUser,
 ): ITbYtPlaylistItem[] {
-  const result = playlists.map((item) => {
-    return {
+  const result: ITbYtPlaylistItem[] = [];
+  playlists.map((item) => {
+    const tmp: ITbYtPlaylistItem = {
       vid: item.contentDetails?.videoId ?? "",
-      playlistId: item.snippet?.playlistId ?? "",
-      channelId: item.snippet?.channelId ?? "",
-      publishDate: item.snippet?.publishedAt ?? "",
-      videoPublishDate: item.contentDetails?.videoPublishedAt ?? "",
+      playlist_id: item.snippet?.playlistId ?? "",
+      channel_id: item.snippet?.channelId ?? "",
+      publish_date: item.snippet?.publishedAt ?? "",
+      video_publish_date: item.contentDetails?.videoPublishedAt ?? "",
       title: item.snippet?.title ?? "",
       description: item.snippet?.description ?? "",
-      thumbLow: item.snippet?.thumbnails?.default?.url ?? "",
-      thumbMid: item.snippet?.thumbnails?.medium?.url ?? "",
-      thumbHigh: item.snippet?.thumbnails?.high?.url ?? "",
+      thumb_low: item.snippet?.thumbnails?.default?.url ?? "",
+      thumb_mid: item.snippet?.thumbnails?.medium?.url ?? "",
+      thumb_high: item.snippet?.thumbnails?.high?.url ?? "",
       regid: user.uid,
       updid: user.uid,
       upddt: new Date().toISOString(),
     };
+    if (tmp.publish_date !== "" && tmp.video_publish_date !== "") {
+      result.push(tmp);
+    }
   });
   return result;
 }
 
 export function convToSupaVideo(playlists: youtube_v3.Schema$Video[], user: IAdminUser): ITbYtVideo[] {
   const result = playlists.map((video) => {
-    return {
+    const _seconds = secondsFromYoutubeDuration(video.contentDetails?.duration ?? "");
+    const _duration = semiTimeFromSeconds(_seconds);
+    const tmp: ITbYtVideo = {
       vid: video.id ?? "",
-      channelId: video.snippet?.channelId ?? "",
+      cat: "C01",
+      channel_id: video.snippet?.channelId ?? "",
       title: video.snippet?.title ?? "",
-      duration: secondToTime(tryParseInt(video.contentDetails?.duration ?? "")),
+      duration: _duration,
       description: video.snippet?.description ?? "",
-      publishDate: video.snippet?.publishedAt ?? "",
-      viewCount: tryParseInt(video.statistics?.viewCount ?? "0"),
-      likeCount: tryParseInt(video.statistics?.likeCount ?? "0"),
-      favoriteCount: tryParseInt(video.statistics?.favoriteCount ?? "0"),
-      commentCount: tryParseInt(video.statistics?.commentCount ?? "0"),
-      thumbLow: video.snippet?.thumbnails?.default?.url ?? "",
-      thumbMid: video.snippet?.thumbnails?.medium?.url ?? "",
-      thumbHigh: video.snippet?.thumbnails?.high?.url ?? "",
-      uploadDate: video.snippet?.publishedAt ?? "",
-      publishedAt: video.snippet?.publishedAt ?? "",
-      seconds: tryParseInt(video.contentDetails?.duration ?? "0"),
-      defaultLanguage: video.snippet?.defaultLanguage ?? "",
+      publish_date: video.snippet?.publishedAt ?? "",
+      view_count: tryParseInt(video.statistics?.viewCount ?? "0"),
+      like_count: tryParseInt(video.statistics?.likeCount ?? "0"),
+      favorite_count: tryParseInt(video.statistics?.favoriteCount ?? "0"),
+      comment_count: tryParseInt(video.statistics?.commentCount ?? "0"),
+      thumb_low: video.snippet?.thumbnails?.default?.url ?? "",
+      thumb_mid: video.snippet?.thumbnails?.medium?.url ?? "",
+      thumb_high: video.snippet?.thumbnails?.high?.url ?? "",
+      upload_date: video.snippet?.publishedAt ?? "",
+      published_at: video.snippet?.publishedAt ?? "",
+      seconds: _seconds,
+      default_language: video.snippet?.defaultLanguage ?? "",
       regid: user.uid,
       updid: user.uid,
       upddt: new Date().toISOString(),
     };
+    if (tmp.publish_date === "") {
+      delete tmp.publish_date;
+      delete tmp.upload_date;
+      delete tmp.published_at;
+    }
+    return tmp;
   });
   return result;
 }

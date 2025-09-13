@@ -1,8 +1,5 @@
 "use client";
-import {
-  IYoutubeChannel,
-  supaFetchYoutubeChannel,
-} from "@/actions/supabase.video";
+import { IYoutubeChannel, supaFetchYoutubeChannel } from "@/actions/youtube/supabase.yt.api";
 import AppBreadcrumb from "@/components/AppBreadcrumb";
 import SihDataTable from "@/components/data-table/SihDataTable";
 import SihSpinner from "@/components/data-table/SihSpinner";
@@ -88,10 +85,7 @@ const youtubeChannelColumns: ColumnDef<IYoutubeChannel>[] = [
     id: "select",
     header: ({ table }) => (
       <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
+        checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
@@ -110,10 +104,7 @@ const youtubeChannelColumns: ColumnDef<IYoutubeChannel>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
+        <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
           Title
           <ArrowUpDown />
         </Button>
@@ -148,9 +139,7 @@ const youtubeChannelColumns: ColumnDef<IYoutubeChannel>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
+            <DropdownMenuItem onClick={() => navigator.clipboard.writeText(payment.id)}>
               Copy payment ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
